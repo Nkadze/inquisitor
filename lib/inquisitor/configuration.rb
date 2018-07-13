@@ -5,7 +5,7 @@ module Inquisitor
       raise ArgumentError unless args
       klass = args[:class]
       puts fields
-      fields.each do |f|
+      fields.flatten.each do |f|
         puts f.class
         puts f
         puts "inquisitor_options_for_#{f}"
