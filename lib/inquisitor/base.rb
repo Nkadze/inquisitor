@@ -11,7 +11,6 @@ module Inquisitor
 
         def anonymize
           self.class.instance_methods(false).map(&:to_s).select{|m| m.include?('inquisitor_options_for_') && !m.include?('=')}.each do |inquisitor_method|
-            puts inquisitor_method
             field = inquisitor_method.sub('inquisitor_options_for_', '')
             self[field] = get_anonymized_value(self.class.send(inquisitor_method)) unless self[field].blank?
           end
