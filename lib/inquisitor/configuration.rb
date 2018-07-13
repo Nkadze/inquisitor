@@ -2,7 +2,10 @@ module Inquisitor
   class Configuration
     def initialize(*fields, **args)      
       klass = args[:class]
-      args = except!(:class)
+      
+      puts args
+      args.except!(:class)
+      puts args
       raise ArgumentError unless fields
       raise ArgumentError unless args
       fields.flatten.each do |f|
