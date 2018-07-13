@@ -12,7 +12,7 @@ require 'inquisitor/base'
 
 ActiveRecord::Base.class_eval do
   def self.anonymize(*fields, **args)
-    Inquisitor::Configuration.new(fields, **args)
+    Inquisitor::Configuration.new(fields, args, caller_class: self)
 
     include Inquisitor::Base
   end
