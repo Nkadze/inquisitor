@@ -9,7 +9,6 @@ end
 
 require 'inquisitor/configuration'
 require 'inquisitor/base'
-require 'inquisitor/scopes'
 
 ActiveRecord::Base.class_eval do
   def self.anonymize(*fields, **args)
